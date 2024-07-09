@@ -1,0 +1,255 @@
+:root{
+    --verde-athena:#024311;
+    --dourado-athena:#C3A348;
+    --branco:#ffffff;
+    --preto:#000000;
+    --cinza:#F5F5F5;
+    --cinza-escuro:#464749;
+    --fonte-texto:'Roboto';
+}
+
+body{
+    font-family: var(--fonte-texto);
+    background-color: var(--branco);
+}
+
+.cabeçalho{
+    display: flex;
+    justify-content: center;
+}
+
+.cabeçalho__logo{
+    height: 56px;
+    margin: 0.5em 0em;
+}
+
+.banner__desktop{
+    display: none;
+}
+
+.banner__mobile__img{
+    width: 100%;
+}
+
+.banner__apresentacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./imgs/banner-apresentação.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner__apresentacao__texto{
+    color: var(--verde-athena);
+    text-align: center;
+    padding: 2em 2em;
+    font-size: 17px;
+}
+
+.trabalhe-conosco{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+}
+
+.trabalhe-conosco__titulo{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 900;
+    color: var(--verde-athena);
+    margin: 1em;
+}
+
+.trabalhe-conosco__box{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cinza);
+    align-content:space-around;
+    align-items: center;
+    padding: 2em;
+    margin: 1em 2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--dourado-athena);
+}
+
+.trabalhe-conosco__box__img{
+    width: 72px;
+}
+
+.trabalhe-conosco__box__titulo{
+    font-weight: 900;
+    color: var(--dourado-athena);
+    margin: 0.5em 0;
+}
+
+.trabalhe-conosco__box__texto{
+    color: var(--cinza-escuro);
+    text-align: center;
+}
+
+.como-funciona{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--verde-athena);
+    font-size: 14px;
+}
+
+.como-funciona__titulo{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 900;
+    color: var(--branco);
+    margin: 1em 1em 0;
+}
+
+.como-funciona__box{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cinza);
+    margin: 1.5em;
+    padding: 1em;
+    border: 1px, solid, var(--dourado-athena);
+    border-radius: 20px;
+}
+
+.como-funciona__box__item{
+    margin: 1em 0;
+}
+
+.como-funciona__box__item__titulo{
+    color: var(--verde-athena);
+}
+
+.como-funciona__box__item__texto{
+    color: var(--cinza-escuro);
+}
+
+.inscreva-se{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;   
+    padding: 2em 0;
+}
+
+.inscreva-se__texto{
+    color: var(--cinza-escuro);
+    margin: 2em 0;
+    padding: 0 2em;
+}
+
+.inscreva-se__botao{
+    background-color: var(--dourado-athena);
+    text-align: center;
+    font-weight: 900;
+    color: var(--branco);
+    padding: 1em;
+    border-radius: 20px;
+    width: 40%;
+    text-decoration: none;
+    margin: 0 0 2em;
+    transition: 0.5s;
+}
+
+.inscreva-se__botao:hover{
+    background-color: #5a4401;
+    
+}
+
+.rodape{
+    background-color: var(--dourado-athena);
+    color: var(--branco);
+    text-align: center;
+    padding: 1em;
+}
+
+@media screen and (min-width: 1024px){
+    .cabeçalho__logo{
+        height: 88px;
+    }
+
+    .banner__mobile{
+        display: none;
+    }
+
+    .banner__desktop{
+        display: contents;
+    }
+
+    .banner__desktop__img{
+        width: 100%;
+    }
+
+    .banner__apresentacao{
+        display: grid;
+        grid-template-columns: 1.5fr 1.5fr;
+        grid-template-areas: "conteudo branco";
+        background-position: center;
+        min-height: 400px;
+    }
+
+    .banner__apresentacao__texto{
+        font-size: 24px;
+        grid-area: conteudo;
+    }
+
+    .trabalhe-conosco{
+        padding: 3em;
+    }
+
+    .trabalhe-conosco__box{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 4fr;
+        grid-template-areas:
+        "imagem titulo"
+        "imagem conteudo"
+        "imagem conteudo"
+        "imagem conteudo" ;
+    }
+
+    .trabalhe-conosco__box__img{
+        grid-area:imagem;
+        justify-self: center;
+    }
+
+    .trabalhe-conosco__box__titulo{
+        grid-area: titulo;
+        text-align: left;
+    }
+
+    .trabalhe-conosco__box__texto{
+        grid-area: conteudo;
+        text-align: left;
+    }
+
+    .como-funciona{
+        background-image: url(./imgs/como-funciona-bg.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .como-funciona__box{
+        margin: 2em 5em;
+        padding: 2em 5em;
+        font-size: 20px;
+        border-radius: 30px;
+    }
+
+    .inscreva-se{
+        padding: 3em 5em;
+    }
+
+    .inscreva-se__texto, .inscreva-se__botao{
+        font-size: 20px;
+    }
+
+    .inscreva-se__botao{
+        padding: 1em 3em;
+        width: 20%;
+        border-radius: 30px;
+    }
+}
